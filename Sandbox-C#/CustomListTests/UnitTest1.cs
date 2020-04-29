@@ -4,7 +4,7 @@ using Sandbox;
 
 namespace CustomListTests
 {
-    [TestClass]
+    [TestClass] //Attribute 
     public class UnitTest1
     {
         //[TestMethod]
@@ -49,7 +49,7 @@ namespace CustomListTests
 
         [TestMethod]
 
-        public void AddOneValueAndSearchListForIndexTwo()
+        public void AddOneValueAndSearchListForIndexTwo()  //adding one vaule and test index
         {
             //arrange 
             CustomList<int> testList = new CustomList<int>();
@@ -71,7 +71,7 @@ namespace CustomListTests
         }
         
         [TestMethod]
-        public void Add_AddingOneToIndexZero()
+        public void Add_AddingOneToIndexZero()  //add one value and test index
         {
             //arrange 
             CustomList<int> testList = new CustomList<int>();
@@ -93,7 +93,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_AddingTwoValues()
+        public void Add_AddingTwoValuesCount()  // add two values and count index
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
@@ -112,7 +112,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Remove_RemovingValue()
+        public void Remove_RemovingOneValue() // removing one value and test index 
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
@@ -130,8 +130,8 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Remove_RemovingTwoValues()
+        [TestMethod]  //Attribute 
+        public void Remove_RemovingTwoValues()  // removing two values
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
@@ -154,7 +154,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Remove_RemovingFourValues()
+        public void Remove_RemovingFourValues() //removing four values 
         {
             //arrange
             CustomList<int> testList = new CustomList<int>();
@@ -163,7 +163,7 @@ namespace CustomListTests
             int itemToAddThree = 90;
             int itemToAddFour = 170;
             int itemToAddFive = 4;
-            int expected = 4;
+            int expected = 170;
             int actual;
             //act
             testList.Add(itemToAdd);
@@ -172,13 +172,16 @@ namespace CustomListTests
             testList.Add(itemToAddFour);
             testList.Add(itemToAddFive);
             testList.Remove(itemToAddThree);
-            actual = testList[3];
+            testList.Remove(itemToAddFive);
+            testList.Remove(itemToAdd);
+            testList.Remove(itemToAddThree);
+            actual = testList[1];
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Remove_RemovingValue_CountValuesLeftover()
+        public void Remove_RemovingValue_CountValuesLeftover()  //remove value and count leftover index
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
@@ -186,7 +189,6 @@ namespace CustomListTests
             int itemToAddTwo = 20;
             int itemToAddThree = 56;
             int itemToAddFour = 78;
-
             int expected = 3;
             int actual;
 
@@ -202,14 +204,14 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Remove_RemoveOneValue_CheckCapacity()
+        public void Remove_RemoveOneValue_CheckCapacity() //remove one value and check list capacity
         {
             //arrange
             CustomList<int> testList = new CustomList<int>();
             int itemToAdd = 43;
             int itemToAddTwo = 80;
             int itemToAddThree = 38;
-            int expected = 4;
+            int expected = 2;
             int actual;
             //act
             testList.Add(itemToAdd);
