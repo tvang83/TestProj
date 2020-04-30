@@ -67,7 +67,7 @@ namespace CustomListTests
             actual = testList[2];
 
             //assert
-            Assert.AreEqual(expected, actual)
+            Assert.AreEqual(expected, actual);
         }
         
         [TestMethod]
@@ -117,12 +117,13 @@ namespace CustomListTests
             // arrange
             CustomList<int> testList = new CustomList<int>();
             int itemToAdd = 10;
-            int itemToAdd = 20;
+            int itemToAddTwo = 20;
             int expected = 20;
             int actual;
 
             // act
             testList.Add(itemToAdd);
+            testList.Add(itemToAddTwo);
             testList.Remove(10);
             actual = testList[1];
 
